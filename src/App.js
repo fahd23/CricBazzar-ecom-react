@@ -1,10 +1,12 @@
 import "./App.css";
 import MockMan from "mockman-js";
+import { Navbar } from "./Components/navbar";
 
 function App() {
   return (
     <div className="App">
-      <MockMan />
+      {/* <MockMan /> */}
+      <Navbar />
     </div>
   );
 }
