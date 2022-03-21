@@ -1,0 +1,44 @@
+/* nav-category */
+.nav-category {
+  background-color: var(--accent-color);
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-weight: 600;
+  height: var(--category-bar-height);
+}
+.nav-category a {
+  color: var(--primary-color);
+}
+/* Banner IMG */
+.banner-img {
+  width: 100%;
+  object-fit: fill;
+  height: calc(100vh - 12vh);
+}
+.banner-img-container {
+  position: relative;
+}
+.text-overlay-container {
+  font-family: "Quintessential", cursive;
+  color: var(--primary-color);
+  position: absolute;
+  right: 8%;
+  top: 30%;
+  font-size: 1.7rem;
+}
+.shop-now-btn {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 1rem 0;
+  margin-left: 35%;
+  background: var(--primary-color);
+  color: var(--accent-color);
+  border-radius: 5px;
+  padding: 1rem 1.5rem;
+}
+.shop-now-btn:hover {
+  background: var(--accent-color);
+  color: var(--primary-color);
+}

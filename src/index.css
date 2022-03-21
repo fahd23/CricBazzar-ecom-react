@@ -3,6 +3,7 @@
 
 body {
   margin: 0;
+  background-color: var(--primary-color);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -22,4 +23,92 @@ code {
   --black: #1b1717;
   --navbar-height: 12vh;
   --category-bar-height: 6vh;
+}
+/* responsive css */
+
+@media screen and (min-width: 1300px) {
+  .banner-img {
+    width: 100%;
+    height: calc(100vh - 18vh);
+  }
+}
+@media screen and (max-width: 1300px) {
+  .banner-img {
+    width: 100%;
+    object-fit: fill;
+    height: 80vh;
+  }
+  .text-overlay {
+    font-size: 2rem;
+    width: 35ch;
+    text-align: right;
+  }
+  .card-display-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .nav-category {
+    display: none;
+  }
+  .text-overlay-container .shop-now-btn {
+    font-size: 1.2rem;
+    padding: 0.6rem 1.2rem;
+    margin-left: 47%;
+  }
+}
+@media screen and (max-width: 950px) {
+  .banner-img {
+    width: 100%;
+    object-fit: fill;
+    height: 70vh;
+  }
+  .card-display-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .text-overlay {
+    font-size: 1.5rem;
+    width: 30ch;
+    text-align: right;
+  }
+  .text-overlay-container .shop-now-btn {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    margin-left: 45%;
+  }
+  #login-btn,
+  .nav-search-div,
+  .gu-icon {
+    display: none;
+  }
+  #btn-ham-burger {
+    display: flex;
+  }
+}
+@media screen and (max-width: 700px) {
+  .text-overlay {
+    font-size: 1.3rem;
+    width: 25ch;
+    text-align: right;
+  }
+  .banner-img {
+    width: 100%;
+    object-fit: fill;
+    height: 50vh;
+  }
+  .text-overlay-container .shop-now-btn {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+    margin-left: 67%;
+  }
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+  }
+  .footer .footer-icon-container,
+  .footer-text,
+  .footer-titles {
+    justify-content: center;
+    margin: 1rem auto;
+  }
 }

@@ -1,5 +1,4 @@
-import "./navbar.css";
-import logo from "../Assets/logo.png";
+import "components/navbar/navbar.css";
 import { FaSearch } from "react-icons/fa";
 
 function Navbar() {
@@ -7,7 +6,7 @@ function Navbar() {
     <>
       <nav className="gu-navbar">
         <div className="nav-logo">
-          <img className="logo" src={logo} alt="img" />
+          <img className="logo" src="./Assets/logo.png" alt="img" />
           CricBazzar
         </div>
 
@@ -48,4 +47,4 @@ function Navbar() {
   );
 }
 
-export { Navbar };
+export default Navbar;
