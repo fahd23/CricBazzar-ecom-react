@@ -1,0 +1,19 @@
+/* section feautured */
+.featured-cards {
+  margin: 2rem 2rem 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.section-title {
+  color: var(--accent-color);
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 1rem;
+}
+.offer-info {
+  color: var(--success);
+}
