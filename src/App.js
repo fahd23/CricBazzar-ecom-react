@@ -1,35 +1,16 @@
-import "./App.css";
-import MockMan from "mockman-js";
+import Home from "pages/home";
+import Mockman from "mockman-js";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <MockMan />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/mock" element={<Mockman />} />
+      </Routes>
     </div>
   );
 }
 
 export default App;
-
-// import "./App.css";
-// import axios from "axios";
-// import { useEffect } from "react";
-// import Mockman from "mockman-js";
-
-// function App() {
-//   useEffect(() => {
-//     async function fetchData() {
-//       const { data } = await axios.get("/api/products");
-//       console.log(data);
-//     }
-//     fetchData();
-//   }, []);
-
-//   return (
-//     <div className="App">
-//       <Mockman />
-//     </div>
-//   );
-// }
-
-// export default App;

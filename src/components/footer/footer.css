@@ -1,0 +1,33 @@
+/* footer */
+.footer {
+  width: 100%;
+  background: var(--black);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 1.5rem;
+  line-height: 2rem;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  gap: 1rem;
+}
+.footer a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+.footer-icon-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+.footer-icon {
+  font-size: 1.5rem;
+}
+.footer-titles {
+  margin-left: -1rem;
+  margin-bottom: 0.5rem;
+}
+.footer-text {
+  font-size: 1rem;
+  margin: 1rem 0 0 -4.2rem;
+}
