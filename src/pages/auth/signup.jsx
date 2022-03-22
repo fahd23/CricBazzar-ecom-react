@@ -9,11 +9,11 @@ const SignupPage = () => {
     document.title = "Signup | CricBazzar";
   });
   return (
-    <>
+    <div>
       <Navbar />
       <Signup />
       <Footer />
-    </>
+    </div>
   );
 };
 export default SignupPage;

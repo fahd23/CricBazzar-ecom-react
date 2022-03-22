@@ -3,9 +3,9 @@ import { GoSignIn } from "react-icons/go";
 
 const Signup = () => {
   return (
-    <div class="sign-up login-form-container card-with-shadow">
-      <form class="login-form">
-        <h1 class="form-title">Create New Account</h1>
+    <div className="sign-up login-form-container card-with-shadow">
+      <form className="login-form">
+        <h1 className="form-title">Create New Account</h1>
         <label for="name">Name </label>
         <input
           type="text"
@@ -38,8 +38,8 @@ const Signup = () => {
           <input type="checkbox" id="accept-all-terms" required="" /> I accept
           all terms &amp; conditions
         </label>
-        <div class="login-form-footer">
-          <button class="btn btn-icon danger">
+        <div className="login-form-footer">
+          <button className="btn btn-icon danger">
             <GoSignIn />
             Create New Account
           </button>

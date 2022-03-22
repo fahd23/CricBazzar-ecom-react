@@ -1,8 +1,8 @@
 const ForgetPass = () => {
   return (
-    <div class="login-form-container card-with-shadow">
-      <form class="login-form">
-        <h1 class="form-title">Forgot Password</h1>
+    <div className="login-form-container card-with-shadow">
+      <form className="login-form">
+        <h1 className="form-title">Forgot Password</h1>
         <label for="email-id">Email Address </label>
         <input
           type="email"
@@ -17,8 +17,8 @@ const ForgetPass = () => {
           placeholder="Enter your new password"
           required=""
         />
-        <div class="login-form-footer">
-          <button class="btn btn-icon danger">Reset Password</button>
+        <div className="login-form-footer">
+          <button className="btn btn-icon danger">Reset Password</button>
         </div>
       </form>
     </div>
