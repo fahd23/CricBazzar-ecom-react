@@ -1,5 +1,6 @@
 import "components/navbar/navbar.css";
 import { FaSearch } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -7,7 +8,7 @@ function Navbar() {
       <nav className="gu-navbar">
         <div className="nav-logo">
           <img className="logo" src="./Assets/logo.png" alt="img" />
-          CricBazzar
+          <Link to="/">CricBazzar</Link>
         </div>
 
         <div className="nav-search-div">
@@ -17,22 +18,26 @@ function Navbar() {
           </span>
         </div>
         <div className="nav-list">
-          <ul id="login-btn" className="nav-list-item">
+          <Link to="/login" id="login-btn" className="nav-list-item">
             Login
-          </ul>
+          </Link>
           <ul className="nav-list-item">
             <div className="gu-badge">
               <span className="gu-icon">
-                <i className="fas fa-heart"></i>
-                <span className="notify-num">3</span>
+                <Link to="/wishlist" className="linkStyle">
+                  <i className="fas fa-heart"></i>
+                  <span className="notify-num">3</span>
+                </Link>
               </span>
             </div>
           </ul>
           <ul className="nav-list-item">
             <div className="gu-badge">
               <span className="gu-icon">
-                <i className="fas fa-shopping-cart"></i>
-                <span className="notify-num">1</span>
+                <Link to="/carts" className="linkStyle">
+                  <i className="fas fa-shopping-cart"></i>
+                  <span className="notify-num">1</span>
+                </Link>
               </span>
             </div>
           </ul>

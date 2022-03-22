@@ -1,0 +1,46 @@
+hr {
+  border: 0;
+  border-bottom: 1px solid var(--black);
+}
+.quantity-input {
+  width: 3rem;
+  padding: 3px 0 3px 10px;
+}
+.card {
+  line-height: 2rem;
+}
+.cart-title {
+  font-size: 2rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+.cart-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-bottom: 5rem;
+}
+.horizontal-card-container {
+  display: flex;
+  justify-content: center;
+}
+.cart-card-info {
+  background: var(--ow-white);
+  color: var(--black);
+}
+.horizontal-card-img {
+  width: 24rem;
+}
+.card-footer {
+  margin-top: 1.5rem;
+}
+.btn {
+  border-radius: 0;
+  width: 100%;
+  margin: 0 auto;
+}
+.pric-savings {
+  max-width: 30ch;
+}

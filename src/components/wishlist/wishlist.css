@@ -1,0 +1,23 @@
+.card-img {
+  position: relative;
+}
+.favorite-btn {
+  position: absolute;
+  right: 1.3rem;
+  top: 1.3rem;
+  color: var(--danger);
+  font-size: 1.5rem;
+}
+.wishlist-display {
+  width: 90%;
+  margin: 2rem auto 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.wishlist-title {
+  margin: 2rem 0;
+  text-align: center;
+}
