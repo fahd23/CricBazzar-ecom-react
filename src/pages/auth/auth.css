@@ -1,0 +1,48 @@
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+.form-title {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+.login-form-container {
+  width: 20rem;
+  margin: 5rem auto;
+  background-color: var(--white);
+  padding: 2rem 1rem;
+}
+.login-form,
+.login-form-footer {
+  display: flex;
+  flex-direction: column;
+}
+.login-form {
+  gap: 5px;
+}
+.sign-up {
+  width: 30rem;
+  margin: 3.5rem auto;
+}
+.remember-me-section {
+  display: flex;
+  justify-content: space-between;
+}
+.login-form-footer {
+  margin-top: 10px;
+  align-items: center;
+  gap: 1rem;
+}
+.login-form-container input {
+  padding: 0.6rem;
+  margin-bottom: 0.7rem;
+  border-radius: 5px;
+  border: 1px solid;
+  outline: 1px solid transparent;
+}
+.card-with-shadow {
+  border-radius: 5px;
+}
+.btn {
+  justify-content: center;
+}

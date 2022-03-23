@@ -1,5 +1,6 @@
 import React from "react";
 import "components/banner/banner.css";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
@@ -15,9 +16,9 @@ const Banner = () => {
             <h2 className="text-overlay">
               Branded Products boost your confidence
             </h2>
-            <a href="/" className="link-btn shop-now-btn">
+            <Link to="/products" className="link-btn shop-now-btn">
               SHOP NOW
-            </a>
+            </Link>
           </div>
         </section>
       </div>
