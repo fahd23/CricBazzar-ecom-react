@@ -28,7 +28,7 @@ const Cart = () => {
                 </h3>
               </div>
             </div>
-            <div className="card-footer">
+            <div className="card-footer cart-card-footer">
               <button className="btn default">Remove from Cart</button>
               <button className="btn otld-default">Move to Wishlist</button>
             </div>

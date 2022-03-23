@@ -67,7 +67,9 @@
   width: 85%;
   margin: 2rem auto;
 }
-
+.rating-icon {
+  color: #f0cd06;
+}
 /* responsive css */
 
 @media screen and (max-width: 1300px) {

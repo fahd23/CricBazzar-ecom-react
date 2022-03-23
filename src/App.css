@@ -27,6 +27,9 @@
 .margin-btm {
   margin-bottom: 1rem;
 }
+.mrgn-left-auto {
+  margin-left: auto;
+}
 /* responsive css */
 
 @media screen and (min-width: 1300px) {
