@@ -24,7 +24,12 @@ const Cart = () => {
               <div>
                 <h3>
                   Quantity:
-                  <input type="number" className="quantity-input" min="1" />
+                  <input
+                    type="number"
+                    className="quantity-input"
+                    min="1"
+                    defaultValue="1"
+                  />
                 </h3>
               </div>
             </div>

@@ -30,6 +30,9 @@
 .mrgn-left-auto {
   margin-left: auto;
 }
+.para-sm {
+  font-size: 0.95rem;
+}
 /* responsive css */
 
 @media screen and (min-width: 1300px) {

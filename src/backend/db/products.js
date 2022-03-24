@@ -14,7 +14,7 @@ export const products = [
     offer: "10% OFF",
     categoryName: "CRICKET BATS",
     img: "https://res.cloudinary.com/dgqwptcvp/image/upload/v1647921594/CricBazzar%20Ecommerce/Cricket-bat_lwscgk.jpg",
-    rating: "4",
+    rating: "4.7",
     description: "Extreme power",
   },
   {
@@ -36,8 +36,8 @@ export const products = [
     offer: "42% OFF",
     categoryName: "CRICKET GLOVES",
     img: "https://res.cloudinary.com/dgqwptcvp/image/upload/v1647921655/CricBazzar%20Ecommerce/cricket-gloves_jswvvp.jpg",
-    rating: "4",
-    description: "Premium Quality",
+    rating: "3.8",
+    description: "Large Size",
   },
   {
     _id: uuid(),
@@ -47,7 +47,7 @@ export const products = [
     offer: "6% OFF",
     categoryName: "CRICKET PADS",
     img: "https://res.cloudinary.com/dgqwptcvp/image/upload/v1647921662/CricBazzar%20Ecommerce/cricket-pads_qjpl23.jpg",
-    rating: "4",
+    rating: "4.2",
     description: "Large Size",
   },
   {
@@ -58,7 +58,7 @@ export const products = [
     offer: "11% OFF",
     categoryName: "CRICKET CLOTHINGS",
     img: "https://res.cloudinary.com/dgqwptcvp/image/upload/v1647921646/CricBazzar%20Ecommerce/cricket-clothing_mh8hsx.jpg",
-    rating: "4",
+    rating: "3.5",
     description: "Small Size",
   },
   {
@@ -69,7 +69,7 @@ export const products = [
     offer: "60% off",
     categoryName: "CRICKET SHOES",
     img: "https://res.cloudinary.com/dgqwptcvp/image/upload/v1647921629/CricBazzar%20Ecommerce/cricket_shoe_v3mnpp.jpg",
-    rating: "4",
+    rating: "4.1",
     description: "With Spikes",
   },
   {
@@ -91,7 +91,7 @@ export const products = [
     offer: "60% OFF",
     categoryName: "ACCESSORIES",
     img: "https://res.cloudinary.com/dgqwptcvp/image/upload/v1647921622/CricBazzar%20Ecommerce/cricket_bags_r7olq7.jpg",
-    rating: "4",
+    rating: "3",
     description: "Gray Nicholls",
   },
 ];

@@ -27,6 +27,7 @@ const Product = () => {
                 className="range-slider"
                 min="100"
                 max="10000"
+                defaultValue="4500"
               />
             </div>
           </div>
@@ -110,7 +111,7 @@ const Product = () => {
             (Showing {products.length} products)
           </span>
         </h2>
-        <div className="product-display">
+        <div className="product-display align-itm-c">
           {products.map((product) => (
             <div className="card vertical-card-container card-with-shadow">
               <div className="card-img">
@@ -126,9 +127,17 @@ const Product = () => {
 
               <div className="card-info">
                 <h2 className="card-title">{product.productName}</h2>
-                <h3 className="subtitle flex gap-10">
+                <h3 className="subtitle flex gap-10 para-sm">
                   {product.description}
-                  <span className="flex gap-10 align-itm-c">
+                  <span
+                    className="flex align-itm-c"
+                    style={{
+                      border: "2px solid gold",
+                      borderRadius: "8px",
+                      padding: "0 5px",
+                      gap: "5px",
+                    }}
+                  >
                     {product.rating}
                     <i className="fas fa-star filled rating-icon"> </i>
                   </span>
