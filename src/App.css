@@ -52,12 +52,6 @@
     width: 35ch;
     text-align: right;
   }
-  .card-display-container {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  .nav-category {
-    display: none;
-  }
   .text-overlay-container .shop-now-btn {
     font-size: 1.2rem;
     padding: 0.6rem 1.2rem;
@@ -70,9 +64,6 @@
     object-fit: fill;
     height: 70vh;
   }
-  .card-display-container {
-    grid-template-columns: 1fr 1fr;
-  }
   .text-overlay {
     font-size: 1.5rem;
     width: 30ch;
@@ -84,12 +75,8 @@
     margin-left: 45%;
   }
   #login-btn,
-  .nav-search-div,
   .gu-icon {
     display: none;
-  }
-  #btn-ham-burger {
-    display: flex;
   }
 }
 @media screen and (max-width: 700px) {

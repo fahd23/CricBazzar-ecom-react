@@ -129,15 +129,7 @@ const Product = () => {
                 <h2 className="card-title">{product.productName}</h2>
                 <h3 className="subtitle flex gap-10 para-sm">
                   {product.description}
-                  <span
-                    className="flex align-itm-c"
-                    style={{
-                      border: "2px solid gold",
-                      borderRadius: "8px",
-                      padding: "0 5px",
-                      gap: "5px",
-                    }}
-                  >
+                  <span className="flex align-itm-c rating-outline">
                     {product.rating}
                     <i className="fas fa-star filled rating-icon"> </i>
                   </span>
@@ -146,7 +138,9 @@ const Product = () => {
                   <div>
                     <p className="disc-price">{product.price}</p>
                     <p className="actual-price">{product.mrp}</p>
-                    <p className="offer-info">({product.offer})</p>
+                    <p className="offer-info" style={{ color: "#21f88c" }}>
+                      ({product.offer})
+                    </p>
                   </div>
                 </div>
 
