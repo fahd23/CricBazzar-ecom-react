@@ -8,20 +8,50 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
-    categoryName: "fiction",
-    description:
-      "literature in the form of prose, especially novels, that describes imaginary events and people",
+    categoryName: "CRICKET BATS",
+    img: "https://res.cloudinary.com/dgqwptcvp/image/upload/v1647921594/CricBazzar%20Ecommerce/Cricket-bat_lwscgk.jpg",
+    description: "",
   },
   {
     _id: uuid(),
-    categoryName: "non-fiction",
-    description:
-      "Non-fiction is writing that gives information or describes real events, rather than telling a story.",
+    categoryName: "CRICKET BALLS",
+    img: "https://res.cloudinary.com/dgqwptcvp/image/upload/v1647921638/CricBazzar%20Ecommerce/cricket-ball_lco1zt.jpg",
+    description: "",
   },
   {
     _id: uuid(),
-    categoryName: "horror",
-    description:
-      "Meant to cause discomfort and fear for both the character and readers, horror writers often make use of supernatural and paranormal elements in morbid stories that are sometimes a little too realistic.",
+    categoryName: "CRICKET GLOVES",
+    img: "https://res.cloudinary.com/dgqwptcvp/image/upload/v1647921655/CricBazzar%20Ecommerce/cricket-gloves_jswvvp.jpg",
+    description: "",
+  },
+  {
+    _id: uuid(),
+    categoryName: "CRICKET PADS",
+    img: "https://res.cloudinary.com/dgqwptcvp/image/upload/v1647921662/CricBazzar%20Ecommerce/cricket-pads_qjpl23.jpg",
+    description: "",
+  },
+  {
+    _id: uuid(),
+    categoryName: "CRICKET CLOTHINGS",
+    img: "https://res.cloudinary.com/dgqwptcvp/image/upload/v1647921646/CricBazzar%20Ecommerce/cricket-clothing_mh8hsx.jpg",
+    description: "",
+  },
+  {
+    _id: uuid(),
+    categoryName: "CRICKET SHOES",
+    img: "https://res.cloudinary.com/dgqwptcvp/image/upload/v1647921629/CricBazzar%20Ecommerce/cricket_shoe_v3mnpp.jpg",
+    description: "",
+  },
+  {
+    _id: uuid(),
+    categoryName: "PROTECTION GEAR",
+    img: "https://res.cloudinary.com/dgqwptcvp/image/upload/v1647921671/CricBazzar%20Ecommerce/cricket-protection-kit_o6obky.png",
+    description: "",
+  },
+  {
+    _id: uuid(),
+    categoryName: "ACCESSORIES",
+    img: "https://res.cloudinary.com/dgqwptcvp/image/upload/v1647921622/CricBazzar%20Ecommerce/cricket_bags_r7olq7.jpg",
+    description: "",
   },
 ];

@@ -28,12 +28,12 @@
 .nav-search-div {
   display: inline-flex;
   flex-wrap: nowrap;
-  width: 20rem;
+  width: 25rem;
 }
 .nav-search {
   border-radius: 0;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
 .search-icon {
   padding: 1rem;
@@ -41,8 +41,8 @@
   color: var(--black);
   margin: 0;
   gap: 0;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 /* navabar icons */
 .gu-icon {
@@ -100,4 +100,9 @@
 .linkStyle {
   text-decoration: none;
   color: var(--primary-color);
+}
+@media screen and (max-width: 1300px) {
+  .nav-search-div {
+    display: none;
+  }
 }

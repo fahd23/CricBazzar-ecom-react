@@ -9,11 +9,11 @@ const ForgetPassPage = () => {
     document.title = "Forget Password | CricBazzar";
   });
   return (
-    <>
+    <div>
       <Navbar />
       <ForgetPass />
       <Footer />
-    </>
+    </div>
   );
 };
 export default ForgetPassPage;

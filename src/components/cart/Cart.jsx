@@ -1,6 +1,10 @@
+import { useCart } from "context/cart-context";
+import { useWishlist } from "context/wishlist-context";
 import React from "react";
 import "./cart.css";
 const Cart = () => {
+  const { removeFromCart } = useCart();
+  const { addToWishlist } = useWishlist();
   return (
     <>
       <h2 class="h2 cart-title">My Cart</h2>
@@ -24,13 +28,22 @@ const Cart = () => {
               <div>
                 <h3>
                   Quantity:
-                  <input type="number" className="quantity-input" min="1" />
+                  <input
+                    type="number"
+                    className="quantity-input"
+                    min="1"
+                    defaultValue="1"
+                  />
                 </h3>
               </div>
             </div>
-            <div className="card-footer">
-              <button className="btn default">Remove from Cart</button>
-              <button className="btn otld-default">Move to Wishlist</button>
+            <div className="card-footer cart-card-footer">
+              <button className="btn default" onClick={removeFromCart}>
+                Remove from Cart
+              </button>
+              <button className="btn otld-default" onClick={addToWishlist}>
+                Move to Wishlist
+              </button>
             </div>
           </div>
         </div>

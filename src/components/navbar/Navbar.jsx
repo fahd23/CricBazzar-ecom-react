@@ -1,8 +1,12 @@
 import "components/navbar/navbar.css";
+import { useCart } from "context/cart-context";
+import { useWishlist } from "context/wishlist-context";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 function Navbar() {
+  const { cartItems } = useCart();
+  const { wishlistItems } = useWishlist();
   return (
     <>
       <nav className="gu-navbar">
@@ -26,7 +30,11 @@ function Navbar() {
               <span className="gu-icon">
                 <Link to="/wishlist" className="linkStyle">
                   <i className="fas fa-heart"></i>
-                  <span className="notify-num">3</span>
+                  {wishlistItems > 0 ? (
+                    <span className="notify-num">{wishlistItems}</span>
+                  ) : (
+                    ""
+                  )}
                 </Link>
               </span>
             </div>
@@ -36,7 +44,11 @@ function Navbar() {
               <span className="gu-icon">
                 <Link to="/carts" className="linkStyle">
                   <i className="fas fa-shopping-cart"></i>
-                  <span className="notify-num">1</span>
+                  {cartItems > 0 ? (
+                    <span className="notify-num">{cartItems}</span>
+                  ) : (
+                    ""
+                  )}
                 </Link>
               </span>
             </div>

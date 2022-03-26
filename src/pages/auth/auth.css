@@ -41,7 +41,7 @@ a {
   outline: 1px solid transparent;
 }
 .card-with-shadow {
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .btn {
   justify-content: center;
