@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   const { cartItems } = useCart();
-  const { wishlistItems } = useWishlist();
+  const { wishlistState } = useWishlist();
+  const { wishlist } = wishlistState;
   return (
     <>
       <nav className="gu-navbar">
@@ -30,8 +31,8 @@ function Navbar() {
               <span className="gu-icon">
                 <Link to="/wishlist" className="linkStyle">
                   <i className="fas fa-heart"></i>
-                  {wishlistItems > 0 ? (
-                    <span className="notify-num">{wishlistItems}</span>
+                  {wishlist.length > 0 ? (
+                    <span className="notify-num">{wishlist.length}</span>
                   ) : (
                     ""
                   )}

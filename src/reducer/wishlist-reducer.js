@@ -1,4 +1,4 @@
-export const WishlistReducer = (state, action) => {
+export const wishlistReducer = (state, action) => {
   const { wishlist } = state;
 
   switch (action.type) {
@@ -13,8 +13,10 @@ export const WishlistReducer = (state, action) => {
           ],
         };
 
-      return { ...state, wishlist: [...wishlist, action.payload] };
-
+      return {
+        ...state,
+        wishlist: [...wishlist, action.payload],
+      };
     case "REMOVE_FROM_WISHLIST":
       return {
         ...state,
