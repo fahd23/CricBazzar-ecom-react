@@ -62,7 +62,7 @@ export const FilterOperations = ({ state, dispatch }) => {
         <h2 className="margin-btm">Rating</h2>
         <div className="flex-clm gap-10 para-sm">
           {[4, 3, 2, 1].map((rating) => (
-            <label>
+            <label key={rating}>
               <input
                 type="radio"
                 name="rate"
