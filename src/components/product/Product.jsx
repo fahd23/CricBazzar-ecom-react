@@ -37,7 +37,6 @@ const Product = ({ products }) => {
                       type: "ADD_TO_WISHLIST",
                       payload: product,
                     });
-                    console.log(product._id);
                   }}
                 >
                   {wishlist.filter((item) => item._id === product._id)

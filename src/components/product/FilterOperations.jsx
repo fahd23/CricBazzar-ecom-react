@@ -53,69 +53,33 @@ export const FilterOperations = ({ state, dispatch }) => {
               checked={state.sortBy === "LOW_TO_HIGH"}
               onClick={() => dispatch({ type: "LOW_TO_HIGH" })}
             />
-            <span>Price - Low to High </span>
+            <span>Price - Low to High</span>
           </label>
         </div>
       </div>
 
       <div className="product-rating">
         <h2 className="margin-btm">Rating</h2>
-
         <div className="flex-clm gap-10 para-sm">
-          <label>
-            <input
-              type="radio"
-              name="rate"
-              value="4"
-              checked={state.sortRating === "4"}
-              onClick={(e) =>
-                dispatch({ type: "RATING", payload: e.target.value })
-              }
-            />
-            <span> 4 Stars and above</span>
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="rate"
-              value="3"
-              checked={state.sortRating === "3"}
-              onClick={(e) =>
-                dispatch({ type: "RATING", payload: e.target.value })
-              }
-            />
-            <span>3 Stars and above </span>
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="rate"
-              value="2"
-              checked={state.sortRating === "2"}
-              onClick={(e) =>
-                dispatch({ type: "RATING", payload: e.target.value })
-              }
-            />
-            <span>2 Stars and above </span>
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="rate"
-              value="1"
-              checked={state.sortRating === "1"}
-              onClick={(e) =>
-                dispatch({ type: "RATING", payload: e.target.value })
-              }
-            />
-            <span>1 Stars and above </span>
-          </label>
+          {[4, 3, 2, 1].map((rating) => (
+            <label>
+              <input
+                type="radio"
+                name="rate"
+                value={rating}
+                checked={state.sortRating === `${rating}`}
+                onClick={(e) =>
+                  dispatch({ type: "RATING", payload: e.target.value })
+                }
+              />
+              <span> {rating} Stars and above</span>
+            </label>
+          ))}
         </div>
       </div>
 
       <div>
         <h2 className="margin-btm">Category</h2>
-
         <div className="flex-clm gap-10 para-sm">
           <label className="checkbox">
             <input
