@@ -1,25 +1,18 @@
-import { useState, createContext, useContext } from "react";
-
-const defaultWishlistContextValue = {
-  items: 0,
+import { createContext, useContext, useReducer } from "react";
+import { wishlistReducer } from "reducer/wishlist-reducer";
+const defaultWishlistValue = {
+  wishlist: [],
 };
-const WishlistContext = createContext(defaultWishlistContextValue);
+
+const WishlistContext = createContext(defaultWishlistValue);
 
 const WishlistProvider = ({ children }) => {
-  const [wishlistItems, setWishlistItems] = useState(0);
-  const [isActive, setActive] = useState(false);
-  const addToWishlist = () => {
-    setActive(!isActive);
-    setWishlistItems((item) => item + 1);
-  };
-  const removeFromWishlist = () => {
-    setWishlistItems((item) => item - 1);
-  };
+  const [wishlistState, wishlistDispatch] = useReducer(wishlistReducer, {
+    wishlist: [],
+  });
   return (
     <div>
-      <WishlistContext.Provider
-        value={{ wishlistItems, isActive, addToWishlist, removeFromWishlist }}
-      >
+      <WishlistContext.Provider value={{ wishlistState, wishlistDispatch }}>
         {children}
       </WishlistContext.Provider>
     </div>

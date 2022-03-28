@@ -25,9 +25,7 @@ const ProductProvider = ({ children }) => {
     price: 0,
   });
 
-  const sortedProduct = sortPrice(products, state.sortBy);
-
-  const ratingProduct = FilterRating(sortedProduct, state.sortRating);
+  const ratingProduct = FilterRating(products, state.sortRating);
 
   const pirceFilteredProduct = FilterPrice(ratingProduct, state.price);
 
@@ -40,8 +38,8 @@ const ProductProvider = ({ children }) => {
     state.categoryName.clothings,
     state.categoryName.accessories
   );
-
-  const updatedDataList = categoriesFilterd;
+  const sortedProduct = sortPrice(categoriesFilterd, state.sortBy);
+  const updatedDataList = sortedProduct;
   return (
     <productContext.Provider value={{ state, dispatch, updatedDataList }}>
       {children}
