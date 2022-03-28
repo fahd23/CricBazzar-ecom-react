@@ -3,14 +3,19 @@ import "./product.css";
 import { BsSuitHeart, BsSuitHeartFill } from "react-icons/bs";
 import { useWishlist } from "context/wishlist-context";
 import { useProduct } from "context/product-context";
+import { useCart } from "context/cart-context";
 import { FilterOperations } from "./FilterOperations";
 
 const Product = ({ products }) => {
+  const { state, dispatch } = useProduct();
   const {
     wishlistState: { wishlist },
     wishlistDispatch,
   } = useWishlist();
-  const { state, dispatch } = useProduct();
+  const {
+    cartState: { cart },
+    cartDispatch,
+  } = useCart();
   return (
     <div className="flex">
       <aside className="filters-aside">
@@ -68,7 +73,15 @@ const Product = ({ products }) => {
                 </div>
 
                 <div className="card-footer">
-                  <button className="btn-link call-to-action vertical-btn">
+                  <button
+                    className="btn-link call-to-action vertical-btn"
+                    onClick={() =>
+                      cartDispatch({
+                        type: "ADD_TO_CART",
+                        payload: product,
+                      })
+                    }
+                  >
                     Add to cart
                   </button>
                 </div>

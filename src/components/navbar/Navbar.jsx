@@ -5,7 +5,9 @@ import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 function Navbar() {
-  const { cartItems } = useCart();
+  const {
+    cartState: { cart },
+  } = useCart();
   const { wishlistState } = useWishlist();
   const { wishlist } = wishlistState;
   return (
@@ -45,8 +47,8 @@ function Navbar() {
               <span className="gu-icon">
                 <Link to="/carts" className="linkStyle">
                   <i className="fas fa-shopping-cart"></i>
-                  {cartItems > 0 ? (
-                    <span className="notify-num">{cartItems}</span>
+                  {cart.length > 0 ? (
+                    <span className="notify-num">{cart.length}</span>
                   ) : (
                     ""
                   )}
