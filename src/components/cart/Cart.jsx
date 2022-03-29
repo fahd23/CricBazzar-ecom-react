@@ -13,7 +13,7 @@ const Cart = () => {
     return cart.length
       ? {
           ...state,
-          price: state.price + Number(action.price),
+          price: (state.price + Number(action.price)) * Number(action.value),
           mrp: state.mrp + Number(action.mrp),
         }
       : state;
@@ -74,7 +74,7 @@ const Cart = () => {
                             </button>
                             <input
                               className="quantity-input"
-                              value={quantity}
+                              value={product.value}
                             />
                             <button
                               className="quantity-btn default"
@@ -150,7 +150,8 @@ const Cart = () => {
                 <hr />
                 <h4 className="pric-savings">
                   {`You will save ₹${
-                    toatlPriceDetails.mrp - Number(toatlPriceDetails.price) + 50
+                    toatlPriceDetails.mrp -
+                    (Number(toatlPriceDetails.price) + 50)
                   }
                    on this order`}
                 </h4>

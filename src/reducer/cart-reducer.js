@@ -7,13 +7,12 @@ export const cartReducer = (state, action) => {
         return {
           ...state,
           cart: [...cart.filter((item) => item._id !== payload._id)],
-          quantity: quantity + 1,
         };
 
       return {
         ...state,
         cart: [...cart, payload],
-        quantity: 1,
+        quantity: [...quantity, payload, (payload.value = 1)],
       };
 
     case "REMOVE_FROM_CART":
@@ -21,17 +20,24 @@ export const cartReducer = (state, action) => {
         ...state,
         cart: [...cart.filter((item) => item._id !== payload._id)],
       };
-    case "DEC_CART_QUANTITY":
-      return {
-        ...state,
-        quantity: quantity > 1 ? quantity - 1 : quantity,
-      };
-
     case "INC_CART_QUANTITY":
-      return {
-        ...state,
-        quantity: quantity + 1,
-      };
+      if (quantity.filter((item) => item._id === payload._id)) {
+        console.log(state);
+        return {
+          ...state,
+          quantity: [...quantity, (payload.value += 1)],
+        };
+      }
+    case "DEC_CART_QUANTITY":
+      if (quantity.filter((item) => item._id === payload._id))
+        return {
+          ...state,
+          quantity: [
+            ...quantity,
+            (payload.value =
+              payload.value > 1 ? payload.value - 1 : payload.value),
+          ],
+        };
     case "default":
       return state;
   }
