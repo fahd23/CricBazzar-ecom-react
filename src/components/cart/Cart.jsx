@@ -124,10 +124,7 @@ const Cart = () => {
                 );
               })}
             </div>
-            <div
-              className="card text-only-card card-with-shadow"
-              style={{ alignSelf: "start" }}
-            >
+            <div className="card text-only-card card-with-shadow align-self-start">
               <h2>Price details</h2>
               <hr />
               <div className="card-body">

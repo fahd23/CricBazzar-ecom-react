@@ -4,8 +4,10 @@ import { useWishlist } from "context/wishlist-context";
 import { BsSuitHeart, BsSuitHeartFill } from "react-icons/bs";
 
 const Wishlist = () => {
-  const { wishlistState, wishlistDispatch } = useWishlist();
-  const { wishlist } = wishlistState;
+  const {
+    wishlistState: { wishlist },
+    wishlistDispatch,
+  } = useWishlist();
   const { cartDispatch } = useCart();
   return (
     <>

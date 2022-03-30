@@ -18,6 +18,9 @@
 .align-itm-c {
   align-items: center;
 }
+.align-self-start {
+  align-self: start;
+}
 .gap-10 {
   gap: 10px;
 }
