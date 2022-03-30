@@ -8,15 +8,16 @@ import { HiMinusSm } from "react-icons/hi";
 const Cart = () => {
   const { cartState, cartDispatch } = useCart();
   const { wishlistDispatch } = useWishlist();
-  const { cart, quantity } = cartState;
-  const priceDetailsReducer = (state, action) => {
+  const { cart } = cartState;
+
+  const priceDetailsReducer = (acc, cur) => {
     return cart.length
       ? {
-          ...state,
-          price: (state.price + Number(action.price)) * Number(action.value),
-          mrp: state.mrp + Number(action.mrp),
+          ...acc,
+          price: acc.price + Number(cur.product.price) * Number(cur.quantity),
+          mrp: acc.mrp + Number(cur.product.mrp) * Number(cur.quantity),
         }
-      : state;
+      : acc;
   };
 
   const toatlPriceDetails = cart.reduce(priceDetailsReducer, {
@@ -40,7 +41,7 @@ const Cart = () => {
         ) : (
           <div className="flex gap-3 flex-wrp sp-around">
             <div className="flex flex-clm gap-10 ">
-              {cart?.map((product) => {
+              {cart?.map(({ product, quantity }) => {
                 return (
                   <div className="card horizontal-card-container card-with-shadow">
                     <div className="card-img">
@@ -74,7 +75,7 @@ const Cart = () => {
                             </button>
                             <input
                               className="quantity-input"
-                              value={product.value}
+                              value={quantity}
                             />
                             <button
                               className="quantity-btn default"

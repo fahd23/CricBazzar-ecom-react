@@ -3,7 +3,6 @@ import { cartReducer } from "reducer/cart-reducer";
 
 const defaultCartValue = {
   cart: [],
-  quantity: [],
 };
 
 const CartContext = createContext(defaultCartValue);
