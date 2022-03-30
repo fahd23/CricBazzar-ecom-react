@@ -1,17 +1,24 @@
 import "components/wishlist/wishlist.css";
-// import { useCart } from "context/cart-context";
+import { useCart } from "context/cart-context";
 import { useWishlist } from "context/wishlist-context";
 import { BsSuitHeart, BsSuitHeartFill } from "react-icons/bs";
 
 const Wishlist = () => {
-  const { wishlistState, wishlistDispatch } = useWishlist();
-  const { wishlist } = wishlistState;
+  const {
+    wishlistState: { wishlist },
+    wishlistDispatch,
+  } = useWishlist();
+  const { cartDispatch } = useCart();
   return (
     <>
       <div className="wishlist-display flex-clm">
+        <h2 className="h2 cart-title">
+          {wishlist.length
+            ? `My wishlist ${wishlist.length}`
+            : `Empty wishlist`}
+        </h2>
         {wishlist.length === 0 ? (
           <>
-            <h1>Empty Wishlist</h1>
             <h3>You Don't Have Any Items In Wishlist.</h3>
             <img
               src="https://res.cloudinary.com/dgqwptcvp/image/upload/v1648393191/CricBazzar%20Ecommerce/res-console.cloudinary-removebg-preview_ffxaq7.png"
@@ -20,7 +27,6 @@ const Wishlist = () => {
           </>
         ) : (
           <>
-            <h2 className="h2 wishlist-title">My Wishlist {wishlist.length}</h2>
             <div className="flex gap-3 flex-wrp sp-around">
               {wishlist?.map((product) => {
                 return (
@@ -74,9 +80,16 @@ const Wishlist = () => {
                       <div className="card-footer">
                         <button
                           className="btn-link call-to-action vertical-btn"
-                          onClick={() =>
-                            wishlistDispatch({ type: "REMOVE_FROM_WISHLIST" })
-                          }
+                          onClick={() => {
+                            cartDispatch({
+                              type: "ADD_TO_CART",
+                              payload: product,
+                            });
+                            wishlistDispatch({
+                              type: "REMOVE_FROM_WISHLIST",
+                              payload: product,
+                            });
+                          }}
                         >
                           Move to cart
                         </button>

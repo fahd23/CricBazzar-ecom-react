@@ -2,9 +2,14 @@ hr {
   border: 0;
   border-bottom: 1px solid var(--black);
 }
+.quantity-btn {
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin: 5px;
+}
 .quantity-input {
-  width: 3rem;
-  padding: 3px 0 3px 10px;
+  width: 2.5rem;
+  padding: 5px;
 }
 .card {
   line-height: 2rem;
@@ -18,9 +23,9 @@ hr {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
+  gap: 2rem;
   flex-wrap: wrap;
-  margin-bottom: 5rem;
+  margin: 2rem auto 5rem;
 }
 .horizontal-card-container {
   display: flex;
