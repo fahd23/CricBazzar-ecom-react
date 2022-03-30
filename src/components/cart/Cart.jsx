@@ -134,7 +134,12 @@ const Cart = () => {
                 <div className="flex sp-bwtn">
                   <h4>
                     Price (
-                    <span className="grey-text">{cart.length} items</span>)
+                    <span className="grey-text">
+                      {cart.length === 1
+                        ? `${cart.length} item`
+                        : `${cart.length} items`}{" "}
+                    </span>
+                    )
                   </h4>
                   <p>₹ {toatlPriceDetails.price}</p>
                 </div>
