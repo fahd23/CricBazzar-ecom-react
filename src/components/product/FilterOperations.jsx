@@ -13,8 +13,8 @@ export const FilterOperations = ({ state, dispatch }) => {
         <div>
           <div className="range flex sp-bwtn para-sm">
             <p>250</p>
-            <p>4500</p>
-            <p>10000</p>
+            <p>25000</p>
+            <p>50000</p>
           </div>
 
           <div className="slider">
@@ -22,8 +22,8 @@ export const FilterOperations = ({ state, dispatch }) => {
               type="range"
               className="range-slider"
               min="300"
-              max="10000"
-              step="100"
+              max="50000"
+              step="200"
               value={state.price}
               onChange={(e) =>
                 dispatch({ type: "PRICE", payload: e.target.value })

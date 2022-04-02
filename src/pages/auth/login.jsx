@@ -6,7 +6,7 @@ import Login from "components/auth/Login";
 const LoginPage = () => {
   useEffect(() => {
     document.title = "Login | CricBazzar";
-  });
+  }, []);
   return (
     <>
       <Navbar />

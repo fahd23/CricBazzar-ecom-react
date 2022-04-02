@@ -7,7 +7,7 @@ import ForgetPass from "components/auth/ForgetPass";
 const ForgetPassPage = () => {
   useEffect(() => {
     document.title = "Forget Password | CricBazzar";
-  });
+  }, []);
   return (
     <div>
       <Navbar />

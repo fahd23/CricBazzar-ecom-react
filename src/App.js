@@ -1,4 +1,4 @@
-import "./App.css";
+import "App.css";
 import Mockman from "mockman-js";
 import { Routes, Route } from "react-router-dom";
 import Home from "pages/home";

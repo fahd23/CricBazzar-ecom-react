@@ -13,7 +13,7 @@ export const productReducerFunc = (state, action) => {
           clothings: false,
           accessories: false,
         },
-        price: 6000,
+        price: "",
       };
     case "LOW_TO_HIGH":
       return { ...state, sortBy: action.type };

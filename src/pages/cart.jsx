@@ -6,7 +6,7 @@ import Cart from "components/cart/Cart";
 const Carts = () => {
   useEffect(() => {
     document.title = "Cart | CricBazzar";
-  });
+  }, []);
   return (
     <div>
       <Navbar />

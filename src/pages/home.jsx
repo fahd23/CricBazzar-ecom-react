@@ -7,7 +7,7 @@ import Footer from "components/footer/Footer";
 const Home = () => {
   useEffect(() => {
     document.title = "Home | CricBazzar";
-  });
+  }, []);
 
   return (
     <div>
