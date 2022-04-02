@@ -36,7 +36,7 @@ export const products = [
     offer: "20% OFF",
     categoryName: "BATS",
     img: "https://res.cloudinary.com/dgqwptcvp/image/upload/v1648872456/CricBazzar%20Ecommerce/Dc_1280__32141.1639678528_tw2aak.jpg",
-    rating: "4.9",
+    rating: "0",
     description: "TC PRO",
   },
   {
@@ -47,7 +47,7 @@ export const products = [
     offer: "19% OFF",
     categoryName: "BATS",
     img: "https://res.cloudinary.com/dgqwptcvp/image/upload/v1648873926/CricBazzar%20Ecommerce/3T298103-shadow-bat__28013_aozgzv.webp",
-    rating: "4.4",
+    rating: "4.5",
     description: "Traning Bat",
   },
   {

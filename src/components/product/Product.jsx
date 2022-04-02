@@ -35,6 +35,11 @@ const Product = ({ products }) => {
                   src={product.img}
                   alt={product.productName}
                 />
+                {Number(product.rating) > 4 ? (
+                  <span className="card-badge"> Best seller </span>
+                ) : (
+                  ""
+                )}
                 <span
                   className="favorite-btn"
                   onClick={() => {
@@ -55,7 +60,7 @@ const Product = ({ products }) => {
 
               <div className="card-info">
                 <h2 className="card-title">{product.productName}</h2>
-                <h3 className="subtitle flex gap-10 para-sm">
+                <h3 className="subtitle flex gap-10 para-sm align-itm-c">
                   {product.description}
                   <span className="flex align-itm-c rating-outline">
                     {product.rating}
