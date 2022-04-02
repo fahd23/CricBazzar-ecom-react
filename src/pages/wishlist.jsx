@@ -6,7 +6,7 @@ import Wishlist from "components/wishlist/Wishlist";
 const WishListPage = () => {
   useEffect(() => {
     document.title = "My Wishlist | CricBazzar";
-  });
+  }, []);
   return (
     <div>
       <Navbar />

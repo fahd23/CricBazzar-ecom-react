@@ -7,7 +7,7 @@ import Footer from "components/footer/Footer";
 const SignupPage = () => {
   useEffect(() => {
     document.title = "Signup | CricBazzar";
-  });
+  }, []);
   return (
     <div>
       <Navbar />

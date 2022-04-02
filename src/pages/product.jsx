@@ -8,7 +8,7 @@ const Products = () => {
   const { updatedDataList } = useProduct();
   useEffect(() => {
     document.title = "Products | CricBazzar";
-  });
+  }, []);
   return (
     <div>
       <Navbar />
