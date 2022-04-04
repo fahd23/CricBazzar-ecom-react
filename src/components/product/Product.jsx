@@ -1,10 +1,12 @@
 import "App.css";
 import "./product.css";
+import { useEffect } from "react";
 import { BsSuitHeart, BsSuitHeartFill } from "react-icons/bs";
 import { useWishlist } from "context/wishlist-context";
 import { useProduct } from "context/product-context";
 import { useCart } from "context/cart-context";
 import { FilterOperations } from "./FilterOperations";
+import { useSearchParams } from "react-router-dom";
 
 const Product = ({ products }) => {
   const { state, dispatch } = useProduct();
@@ -16,6 +18,15 @@ const Product = ({ products }) => {
     cartState: { cart },
     cartDispatch,
   } = useCart();
+
+  const [searchParams] = useSearchParams();
+  const categorySelected = searchParams.get("categories");
+  useEffect(() => {
+    dispatch({ type: categorySelected });
+    return () => {
+      dispatch({ type: "CLEAR" });
+    };
+  }, [categorySelected]);
   return (
     <div className="flex">
       <aside className="filters-aside">
