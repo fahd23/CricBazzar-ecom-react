@@ -8,6 +8,9 @@
 .sp-bwtn {
   justify-content: space-between;
 }
+.jtfy-c-center {
+  justify-content: center;
+}
 .flex-clm {
   display: flex;
   flex-direction: column;
@@ -114,6 +117,6 @@
   .footer-text,
   .footer-titles {
     justify-content: center;
-    margin: 1rem auto;
+    margin: auto;
   }
 }

@@ -8,6 +8,7 @@ import LoginPage from "pages/auth/login";
 import SignupPage from "pages/auth/signup";
 import ForgetPassPage from "pages/auth/forgotpass";
 import WishListPage from "pages/wishlist";
+import NotFound from "pages/404/404";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/forgotpassword" element={<ForgetPassPage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
