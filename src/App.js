@@ -1,13 +1,16 @@
 import "App.css";
 import Mockman from "mockman-js";
 import { Routes, Route } from "react-router-dom";
-import Home from "pages/home";
-import Products from "pages/product";
-import Carts from "pages/cart";
-import LoginPage from "pages/auth/login";
-import SignupPage from "pages/auth/signup";
-import ForgetPassPage from "pages/auth/forgotpass";
-import WishListPage from "pages/wishlist";
+import {
+  Home,
+  Products,
+  Carts,
+  LoginPage,
+  SignupPage,
+  ForgetPassPage,
+  WishListPage,
+  NotFound,
+} from "pages";
 
 function App() {
   return (
@@ -21,6 +24,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/forgotpassword" element={<ForgetPassPage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );

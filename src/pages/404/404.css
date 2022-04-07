@@ -1,0 +1,21 @@
+.error_page {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 6rem 1rem;
+  justify-content: center;
+  align-items: center;
+}
+.description {
+  max-width: 33ch;
+}
+.home-btn {
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  background-color: var(--accent-color);
+}
+.content-404 {
+  text-align: center;
+}
+.img-404 {
+  width: 23rem;
+}
