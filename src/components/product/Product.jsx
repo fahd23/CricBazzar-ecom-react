@@ -6,7 +6,7 @@ import { useWishlist } from "context/wishlist-context";
 import { useProduct } from "context/product-context";
 import { useCart } from "context/cart-context";
 import { FilterOperations } from "./FilterOperations";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 const Product = ({ products }) => {
   const { state, dispatch } = useProduct();
@@ -89,17 +89,26 @@ const Product = ({ products }) => {
                 </div>
 
                 <div className="card-footer">
-                  <button
-                    className="btn-link call-to-action vertical-btn"
-                    onClick={() =>
-                      cartDispatch({
-                        type: "ADD_TO_CART",
-                        payload: product,
-                      })
-                    }
-                  >
-                    Add to cart
-                  </button>
+                  {cart.some(({ product: prd }) => prd._id === product._id) ? (
+                    <Link
+                      to="/carts"
+                      className="btn-link call-to-action vertical-btn"
+                    >
+                      Go to cart
+                    </Link>
+                  ) : (
+                    <button
+                      className="btn-link call-to-action vertical-btn"
+                      onClick={() =>
+                        cartDispatch({
+                          type: "ADD_TO_CART",
+                          payload: product,
+                        })
+                      }
+                    >
+                      Add to cart
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
