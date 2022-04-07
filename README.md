@@ -23,7 +23,7 @@ $ npm start
 
 ---
 
-## Features?
+## Features:
 - Home Page
 - Product Listing Page
 - Filters by Price, Category and Ratings
