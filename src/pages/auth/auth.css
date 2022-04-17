@@ -46,3 +46,6 @@ a {
 .btn {
   justify-content: center;
 }
+.guest-btn {
+  margin-top: 10px;
+}

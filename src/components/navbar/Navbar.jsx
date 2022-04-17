@@ -1,15 +1,23 @@
 import "components/navbar/navbar.css";
+import { useAuth } from "context/auth-context";
 import { useCart } from "context/cart-context";
+import { useProduct } from "context/product-context";
 import { useWishlist } from "context/wishlist-context";
 import { FaSearch } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Navbar() {
   const {
     cartState: { cart },
+    cartDispatch,
   } = useCart();
-  const { wishlistState } = useWishlist();
-  const { wishlist } = wishlistState;
+  const {
+    wishlistState: { wishlist },
+    wishlistDispatch,
+  } = useWishlist();
+  const { isLoggedIn, setIsLoggedIn } = useAuth();
+  const { dispatch } = useProduct();
+  // const navigate = useNavigate();
   return (
     <>
       <nav className="gu-navbar">
@@ -25,15 +33,31 @@ function Navbar() {
           </span>
         </div>
         <div className="nav-list">
-          <Link to="/login" id="login-btn" className="nav-list-item">
-            Login
+          <Link
+            to="/login"
+            id="login-btn"
+            className="nav-list-item"
+            onClick={() => {
+              setIsLoggedIn(() => !isLoggedIn);
+              dispatch({ type: "CLEAR" });
+              wishlistDispatch({
+                type: "CLEAR",
+                payload: { wishlist: [] },
+              });
+              cartDispatch({
+                type: "CLEAR",
+                payload: { cart: [] },
+              });
+            }}
+          >
+            {isLoggedIn ? "Logout" : "Login"}
           </Link>
           <ul className="nav-list-item">
             <div className="gu-badge">
               <span className="gu-icon">
                 <Link to="/wishlist" className="linkStyle">
                   <i className="fas fa-heart"></i>
-                  {wishlist.length > 0 ? (
+                  {isLoggedIn && wishlist.length > 0 ? (
                     <span className="notify-num">{wishlist.length}</span>
                   ) : (
                     ""
@@ -47,7 +71,7 @@ function Navbar() {
               <span className="gu-icon">
                 <Link to="/carts" className="linkStyle">
                   <i className="fas fa-shopping-cart"></i>
-                  {cart.length > 0 ? (
+                  {isLoggedIn && cart.length > 0 ? (
                     <span className="notify-num">{cart.length}</span>
                   ) : (
                     ""

@@ -1,24 +1,35 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FiLogIn } from "react-icons/fi";
+import { useAuth } from "context/auth-context";
 const Login = () => {
+  const { isLoggedIn, setIsLoggedIn } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
+
   return (
     <div class="login-form-container card-with-shadow">
-      <form class="login-form">
+      <form
+        class="login-form"
+        onSubmit={(e) => {
+          e.preventDefault();
+        }}
+      >
         <h1 class="form-title">Log In</h1>
         <label for="email-id">Email Address </label>
         <input
           type="email"
           id="email-id"
           placeholder="Enter your email id"
-          required=""
+          required
         />
         <label for="password">Password</label>
         <input
           type="password"
           id="password"
           placeholder="Enter your password"
-          required=""
+          required
         />
         <div class="remember-me-section">
           <label for="remember-me">
@@ -31,9 +42,20 @@ const Login = () => {
             <FiLogIn />
             Log In
           </button>
-          <Link to="/signup">New to CricBazzar? Sign up</Link>
         </div>
       </form>
+      <button
+        class="btn default guest-btn"
+        onClick={() => {
+          isLoggedIn ? "" : setIsLoggedIn((isLoggedIn) => !isLoggedIn);
+          navigate(from, { replace: true });
+        }}
+      >
+        LogIn As the Guest
+      </button>
+      <Link to="/signup" className="flex jtfy-c-center margin-top">
+        New to CricBazzar? Sign up
+      </Link>
     </div>
   );
 };
