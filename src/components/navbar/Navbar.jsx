@@ -38,7 +38,7 @@ function Navbar() {
             id="login-btn"
             className="nav-list-item"
             onClick={() => {
-              setIsLoggedIn(() => !isLoggedIn);
+              isLoggedIn ? setIsLoggedIn(() => !isLoggedIn) : "";
               dispatch({ type: "CLEAR" });
               wishlistDispatch({
                 type: "CLEAR",
