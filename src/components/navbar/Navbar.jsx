@@ -4,7 +4,7 @@ import { useCart } from "context/cart-context";
 import { useProduct } from "context/product-context";
 import { useWishlist } from "context/wishlist-context";
 import { FaSearch } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const {
@@ -17,7 +17,6 @@ function Navbar() {
   } = useWishlist();
   const { isLoggedIn, setIsLoggedIn } = useAuth();
   const { dispatch } = useProduct();
-  // const navigate = useNavigate();
   return (
     <>
       <nav className="gu-navbar">
