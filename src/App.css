@@ -45,14 +45,6 @@
 .para-sm {
   font-size: 0.95rem;
 }
-/* responsive css */
-
-@media screen and (min-width: 1300px) {
-  .banner-img {
-    width: 100%;
-    height: calc(100vh - 12vh);
-  }
-}
 @media screen and (max-width: 1300px) {
   .banner-img {
     width: 100%;
@@ -85,10 +77,6 @@
     font-size: 1rem;
     padding: 0.5rem 1rem;
     margin-left: 45%;
-  }
-  #login-btn,
-  .gu-icon {
-    display: none;
   }
 }
 @media screen and (max-width: 700px) {

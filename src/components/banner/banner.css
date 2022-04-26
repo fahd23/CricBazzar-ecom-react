@@ -42,3 +42,17 @@
   background: var(--accent-color);
   color: var(--primary-color);
 }
+/* responsive css */
+
+@media screen and (min-width: 1300px) {
+  .banner-img {
+    width: 100%;
+    height: calc(100vh - 12vh);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .banner-img {
+    height: 55vh;
+  }
+}

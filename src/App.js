@@ -7,7 +7,6 @@ import {
   Carts,
   LoginPage,
   SignupPage,
-  ForgetPassPage,
   WishListPage,
   NotFound,
 } from "pages";
@@ -22,7 +21,6 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
-        <Route path="/forgotpassword" element={<ForgetPassPage />} />
         <Route path="*" element={<NotFound />} />
         <Route
           path="/carts"

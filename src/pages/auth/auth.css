@@ -6,9 +6,13 @@ a {
   font-size: 1.6rem;
   margin-bottom: 1rem;
 }
+.container {
+  display: flex;
+  justify-content: center;
+}
 .login-form-container {
-  width: 20rem;
-  margin: 5rem auto;
+  min-width: 15rem;
+  margin: 5rem 1rem;
   background-color: var(--white);
   padding: 2rem 1rem;
 }
@@ -21,8 +25,8 @@ a {
   gap: 5px;
 }
 .sign-up {
-  width: 30rem;
-  margin: 3.5rem auto;
+  min-width: 15rem;
+  margin: 3.5rem 2rem;
 }
 .remember-me-section {
   display: flex;
@@ -48,4 +52,21 @@ a {
 }
 .guest-btn {
   margin-top: 10px;
+}
+
+@media screen and (min-width: 950px) {
+  .login-form-container {
+    min-width: 20rem;
+  }
+  .sign-up {
+    min-width: 25rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .login-form-container {
+    width: 20rem;
+  }
+  .sign-up {
+    width: 25rem;
+  }
 }

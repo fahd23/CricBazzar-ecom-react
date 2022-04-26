@@ -33,7 +33,7 @@ hr {
   color: var(--black);
 }
 .horizontal-card-img {
-  width: 24rem;
+  width: 20rem;
 }
 .cart-card-footer {
   margin-top: 1.4rem;
@@ -45,4 +45,15 @@ hr {
 }
 .pric-savings {
   max-width: 30ch;
+}
+@media screen and (max-width: 600px) {
+  .horizontal-card-img {
+    width: 13rem;
+  }
+  .card-cart {
+    max-width: 24.5rem;
+  }
+  .cart-title {
+    margin: 0;
+  }
 }
