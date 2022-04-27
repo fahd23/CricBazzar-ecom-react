@@ -46,6 +46,9 @@ hr {
 .pric-savings {
   max-width: 30ch;
 }
+.btn:disabled {
+  cursor: no-drop;
+}
 @media screen and (max-width: 600px) {
   .horizontal-card-img {
     width: 13rem;

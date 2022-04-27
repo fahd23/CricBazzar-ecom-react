@@ -108,11 +108,10 @@ const Cart = () => {
                           (item) => item._id === product._id
                         )}
                         onClick={() => {
-                          wishlist.filter((item) => item._id !== product._id) &&
-                            wishlistDispatch({
-                              type: "ADD_TO_WISHLIST",
-                              payload: product,
-                            });
+                          wishlistDispatch({
+                            type: "ADD_TO_WISHLIST",
+                            payload: product,
+                          });
                           cartDispatch({
                             type: "REMOVE_FROM_CART",
                             payload: product,
