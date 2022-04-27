@@ -58,10 +58,8 @@ const Product = ({ products }) => {
                   src={product.img}
                   alt={product.productName}
                 />
-                {Number(product.rating) > 4 ? (
+                {Number(product.rating) > 4 && (
                   <span className="card-badge"> Best seller </span>
-                ) : (
-                  ""
                 )}
                 <span
                   className="favorite-btn"
@@ -72,8 +70,7 @@ const Product = ({ products }) => {
                     });
                   }}
                 >
-                  {wishlist.filter((item) => item._id === product._id)
-                    .length === 1 ? (
+                  {wishlist.find((item) => item._id === product._id) ? (
                     <BsSuitHeartFill />
                   ) : (
                     <BsSuitHeart />

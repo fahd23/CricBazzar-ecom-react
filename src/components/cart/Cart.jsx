@@ -7,7 +7,10 @@ import { HiMinusSm } from "react-icons/hi";
 
 const Cart = () => {
   const { cartState, cartDispatch } = useCart();
-  const { wishlistDispatch } = useWishlist();
+  const {
+    wishlistState: { wishlist },
+    wishlistDispatch,
+  } = useWishlist();
   const { cart } = cartState;
 
   const priceDetailsReducer = (acc, cur) => {
@@ -101,18 +104,24 @@ const Cart = () => {
                       </button>
                       <button
                         className="btn otld-default"
+                        disabled={wishlist.find(
+                          (item) => item._id === product._id
+                        )}
                         onClick={() => {
-                          wishlistDispatch({
-                            type: "ADD_TO_WISHLIST",
-                            payload: product,
-                          });
+                          wishlist.filter((item) => item._id !== product._id) &&
+                            wishlistDispatch({
+                              type: "ADD_TO_WISHLIST",
+                              payload: product,
+                            });
                           cartDispatch({
                             type: "REMOVE_FROM_CART",
                             payload: product,
                           });
                         }}
                       >
-                        Move to Wishlist
+                        {wishlist.find((item) => item._id === product._id)
+                          ? "Already in Wishlist"
+                          : "Move to Wishlist"}
                       </button>
                     </div>
                   </div>
@@ -130,7 +139,7 @@ const Cart = () => {
                   <span className="grey-text">
                     {cart.length === 1
                       ? `${cart.length} item`
-                      : `${cart.length} items`}{" "}
+                      : `${cart.length} items`}
                   </span>
                   )
                 </h4>

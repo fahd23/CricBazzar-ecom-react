@@ -1,5 +1,6 @@
 export const productReducerFunc = (state, action) => {
-  switch (action.type) {
+  const { type, payload } = action;
+  switch (type) {
     case "CLEAR":
       return {
         ...state,
@@ -16,15 +17,15 @@ export const productReducerFunc = (state, action) => {
         price: "",
       };
     case "LOW_TO_HIGH":
-      return { ...state, sortBy: action.type };
+      return { ...state, sortBy: type };
     case "HIGH_TO_LOW":
-      return { ...state, sortBy: action.type };
+      return { ...state, sortBy: type };
     case "RATING":
-      return { ...state, sortRating: action.payload };
+      return { ...state, sortRating: payload };
     case "PRICE":
       return {
         ...state,
-        price: action.payload,
+        price: payload,
       };
     case "BAT":
       return {

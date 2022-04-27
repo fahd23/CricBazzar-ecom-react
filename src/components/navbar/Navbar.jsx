@@ -4,6 +4,7 @@ import { useCart } from "context/cart-context";
 import { useProduct } from "context/product-context";
 import { useWishlist } from "context/wishlist-context";
 import { FaSearch } from "react-icons/fa";
+import { GiShoppingBag } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 
@@ -55,6 +56,16 @@ function Navbar() {
         >
           {isLoggedIn ? "Logout" : "Login"}
         </Link>
+
+        <ul className="nav-list-item">
+          <Link to="/products" className="linkStyle">
+            <div className="gu-badge">
+              <span className="gu-icon">
+                <GiShoppingBag />
+              </span>
+            </div>
+          </Link>
+        </ul>
         <ul className="nav-list-item">
           <div className="gu-badge">
             <span className="gu-icon">
