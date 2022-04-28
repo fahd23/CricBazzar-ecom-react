@@ -1,15 +1,13 @@
 import "App.css";
 import "./product.css";
-import { useEffect } from "react";
-import { BsSuitHeart, BsSuitHeartFill } from "react-icons/bs";
-import { useWishlist } from "context/wishlist-context";
-import { useProduct } from "context/product-context";
-import { useCart } from "context/cart-context";
+import React, { useEffect } from "react";
+import { BsSuitHeart, BsSuitHeartFill, BsFilterLeft } from "react-icons/bs";
+import { useCart, useProduct, useWishlist } from "context";
 import { FilterOperations } from "./FilterOperations";
 import { Link, useSearchParams } from "react-router-dom";
 
 const Product = ({ products }) => {
-  const { state, dispatch } = useProduct();
+  const { state, dispatch, showFilter, setShowFilter } = useProduct();
   const {
     wishlistState: { wishlist },
     wishlistDispatch,
@@ -28,11 +26,23 @@ const Product = ({ products }) => {
     };
   }, [categorySelected]);
   return (
-    <div className="flex">
-      <aside className="filters-aside">
+    <div>
+      <aside
+        className={`filters-aside ${showFilter ? "trans-on" : "trans-off"}`}
+      >
         <FilterOperations state={state} dispatch={dispatch} />
       </aside>
-      <div>
+
+      <div className="products-container">
+        <div
+          className="show-filter"
+          onClick={() => {
+            setShowFilter(!showFilter);
+          }}
+        >
+          <BsFilterLeft />
+          {showFilter ? "Hide filters" : "Show filters"}
+        </div>
         <h2 className="title">Showing {products.length} Products</h2>
         <div className="product-display align-itm-c">
           {products.map((product) => (
@@ -46,10 +56,8 @@ const Product = ({ products }) => {
                   src={product.img}
                   alt={product.productName}
                 />
-                {Number(product.rating) > 4 ? (
+                {Number(product.rating) > 4 && (
                   <span className="card-badge"> Best seller </span>
-                ) : (
-                  ""
                 )}
                 <span
                   className="favorite-btn"
@@ -60,8 +68,7 @@ const Product = ({ products }) => {
                     });
                   }}
                 >
-                  {wishlist.filter((item) => item._id === product._id)
-                    .length === 1 ? (
+                  {wishlist.find((item) => item._id === product._id) ? (
                     <BsSuitHeartFill />
                   ) : (
                     <BsSuitHeart />
@@ -82,9 +89,7 @@ const Product = ({ products }) => {
                   <div>
                     <p className="disc-price">₹ {product.price}</p>
                     <p className="actual-price">₹ {product.mrp}</p>
-                    <p className="offer-info" style={{ color: "#21f88c" }}>
-                      ({product.offer})
-                    </p>
+                    <p className="offer-info">({product.offer})</p>
                   </div>
                 </div>
 

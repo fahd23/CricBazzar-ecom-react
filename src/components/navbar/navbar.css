@@ -6,6 +6,9 @@
   padding-left: 1rem;
   padding-right: 1rem;
   height: 12vh;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 .logo {
   object-fit: cover;
@@ -101,8 +104,27 @@
   text-decoration: none;
   color: var(--primary-color);
 }
+.navlist {
+  position: absolute;
+  top: 12vh;
+  right: 0;
+  background-color: var(--secondary-color);
+  border-bottom-left-radius: 10px;
+}
+.navlist .linkStyle {
+  display: block;
+  color: var(--black);
+  padding: 0.8rem 4rem 1rem 2rem;
+  font-size: 1.1rem;
+}
 @media screen and (max-width: 1300px) {
   .nav-search-div {
+    display: none;
+  }
+}
+@media screen and (max-width: 950px) {
+  #login-btn,
+  .gu-icon {
     display: none;
   }
 }

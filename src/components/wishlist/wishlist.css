@@ -21,3 +21,7 @@
   margin: 2rem 0;
   text-align: center;
 }
+.call-to-action:disabled {
+  background: #00641e;
+  cursor: no-drop;
+}

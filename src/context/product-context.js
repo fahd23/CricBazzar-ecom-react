@@ -1,4 +1,4 @@
-import { createContext, useReducer, useContext } from "react";
+import { createContext, useReducer, useContext, useState } from "react";
 import { productReducerFunc } from "reducer/product-reducer";
 import { products } from "backend/db/products";
 import {
@@ -11,6 +11,7 @@ import {
 const productContext = createContext();
 
 const ProductProvider = ({ children }) => {
+  const [showFilter, setShowFilter] = useState(false);
   const [state, dispatch] = useReducer(productReducerFunc, {
     sortBy: "",
     sortRating: "",
@@ -41,7 +42,9 @@ const ProductProvider = ({ children }) => {
   const sortedProduct = sortPrice(categoriesFilterd, state.sortBy);
   const updatedDataList = sortedProduct;
   return (
-    <productContext.Provider value={{ state, dispatch, updatedDataList }}>
+    <productContext.Provider
+      value={{ state, dispatch, updatedDataList, showFilter, setShowFilter }}
+    >
       {children}
     </productContext.Provider>
   );
