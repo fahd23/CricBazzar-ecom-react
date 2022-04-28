@@ -1,12 +1,9 @@
+import React, { useState } from "react";
 import "components/navbar/navbar.css";
-import { useAuth } from "context/auth-context";
-import { useCart } from "context/cart-context";
-import { useProduct } from "context/product-context";
-import { useWishlist } from "context/wishlist-context";
+import { useAuth, useCart, useProduct, useWishlist } from "context";
+import { Link } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 import { GiShoppingBag } from "react-icons/gi";
-import { Link } from "react-router-dom";
-import React, { useState } from "react";
 
 function Navbar() {
   const {

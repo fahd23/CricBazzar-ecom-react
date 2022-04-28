@@ -2,9 +2,7 @@ import "App.css";
 import "./product.css";
 import React, { useEffect } from "react";
 import { BsSuitHeart, BsSuitHeartFill, BsFilterLeft } from "react-icons/bs";
-import { useWishlist } from "context/wishlist-context";
-import { useProduct } from "context/product-context";
-import { useCart } from "context/cart-context";
+import { useCart, useProduct, useWishlist } from "context";
 import { FilterOperations } from "./FilterOperations";
 import { Link, useSearchParams } from "react-router-dom";
 

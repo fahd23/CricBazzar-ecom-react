@@ -1,6 +1,5 @@
 import "components/wishlist/wishlist.css";
-import { useCart } from "context/cart-context";
-import { useWishlist } from "context/wishlist-context";
+import { useCart, useWishlist } from "context";
 import { BsSuitHeart, BsSuitHeartFill } from "react-icons/bs";
 
 const Wishlist = () => {

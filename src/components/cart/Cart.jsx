@@ -1,7 +1,6 @@
 import React from "react";
 import "./cart.css";
-import { useCart } from "context/cart-context";
-import { useWishlist } from "context/wishlist-context";
+import { useCart, useWishlist } from "context";
 import { BsPlus } from "react-icons/bs";
 import { HiMinusSm } from "react-icons/hi";
 
