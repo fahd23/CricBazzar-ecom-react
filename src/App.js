@@ -11,6 +11,7 @@ import {
   NotFound,
 } from "pages";
 import { RequiresAuth } from "components/router/RequiresAuth";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (

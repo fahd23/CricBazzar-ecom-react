@@ -3,6 +3,7 @@ import "./cart.css";
 import { useCart, useWishlist } from "context";
 import { BsPlus } from "react-icons/bs";
 import { HiMinusSm } from "react-icons/hi";
+import { ToastContainer, toast } from "react-toastify";
 
 const Cart = () => {
   const { cartState, cartDispatch } = useCart();
@@ -92,12 +93,13 @@ const Cart = () => {
                     <div className="card-footer cart-card-footer">
                       <button
                         className="btn default"
-                        onClick={() =>
+                        onClick={() => {
                           cartDispatch({
                             type: "REMOVE_FROM_CART",
                             payload: product,
-                          })
-                        }
+                          });
+                          toast.error("Removed from cart");
+                        }}
                       >
                         Remove from Cart
                       </button>
@@ -115,6 +117,7 @@ const Cart = () => {
                             type: "REMOVE_FROM_CART",
                             payload: product,
                           });
+                          toast("Moved to Wishlist");
                         }}
                       >
                         {wishlist.find((item) => item._id === product._id)
@@ -165,6 +168,7 @@ const Cart = () => {
           </div>
         </div>
       )}
+      <ToastContainer position="bottom-center" />
     </div>
   );
 };

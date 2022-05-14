@@ -14,17 +14,17 @@ makeServer();
 
 ReactDOM.render(
   <React.StrictMode>
-    <ProductProvider>
-      <Router>
-        <CartProvider>
-          <WishlistProvider>
-            <AuthProvider>
+    <Router>
+      <AuthProvider>
+        <ProductProvider>
+          <CartProvider>
+            <WishlistProvider>
               <App />
-            </AuthProvider>
-          </WishlistProvider>
-        </CartProvider>
-      </Router>
-    </ProductProvider>
+            </WishlistProvider>
+          </CartProvider>
+        </ProductProvider>
+      </AuthProvider>
+    </Router>
   </React.StrictMode>,
   document.getElementById("root")
 );

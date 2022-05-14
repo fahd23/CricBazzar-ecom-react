@@ -1,6 +1,7 @@
 import "components/wishlist/wishlist.css";
 import { useCart, useWishlist } from "context";
 import { BsSuitHeart, BsSuitHeartFill } from "react-icons/bs";
+import { ToastContainer, toast } from "react-toastify";
 
 const Wishlist = () => {
   const {
@@ -47,9 +48,13 @@ const Wishlist = () => {
                   >
                     {wishlist.filter((item) => item._id === product._id)
                       .length === 1 ? (
-                      <BsSuitHeartFill />
+                      <BsSuitHeartFill
+                        onClick={() => toast.error("Removed from Wishlist")}
+                      />
                     ) : (
-                      <BsSuitHeart />
+                      <BsSuitHeart
+                        onClick={() => toast.error("Removed from Wishlist")}
+                      />
                     )}
                   </span>
                 </div>
@@ -86,6 +91,7 @@ const Wishlist = () => {
                           type: "REMOVE_FROM_WISHLIST",
                           payload: product,
                         });
+                        toast.success("Moved to cart");
                       }}
                     >
                       {cart.find((item) => item.product._id === product._id)
@@ -99,6 +105,7 @@ const Wishlist = () => {
           })}
         </div>
       )}
+      <ToastContainer position="bottom-center" />
     </div>
   );
 };

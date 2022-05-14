@@ -2,9 +2,10 @@ import "App.css";
 import "./product.css";
 import React, { useEffect } from "react";
 import { BsSuitHeart, BsSuitHeartFill, BsFilterLeft } from "react-icons/bs";
-import { useCart, useProduct, useWishlist } from "context";
+import { useCart, useProduct, useWishlist, useAuth } from "context";
 import { FilterOperations } from "./FilterOperations";
 import { Link, useSearchParams } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 const Product = ({ products }) => {
   const { state, dispatch, showFilter, setShowFilter } = useProduct();
@@ -16,15 +17,17 @@ const Product = ({ products }) => {
     cartState: { cart },
     cartDispatch,
   } = useCart();
-
   const [searchParams] = useSearchParams();
   const categorySelected = searchParams.get("categories");
+  const { isLoggedIn } = useAuth();
+
   useEffect(() => {
     dispatch({ type: categorySelected });
     return () => {
       dispatch({ type: "CLEAR" });
     };
   }, [categorySelected]);
+
   return (
     <div>
       <aside
@@ -62,16 +65,24 @@ const Product = ({ products }) => {
                 <span
                   className="favorite-btn"
                   onClick={() => {
-                    wishlistDispatch({
-                      type: "ADD_TO_WISHLIST",
-                      payload: product,
-                    });
+                    if (isLoggedIn) {
+                      wishlistDispatch({
+                        type: "ADD_TO_WISHLIST",
+                        payload: product,
+                      });
+                    } else toast.error("Please Login to Add to Wishlist");
                   }}
                 >
                   {wishlist.find((item) => item._id === product._id) ? (
-                    <BsSuitHeartFill />
+                    <BsSuitHeartFill
+                      onClick={() => toast.error("Removed from Wishlist")}
+                    />
                   ) : (
-                    <BsSuitHeart />
+                    <BsSuitHeart
+                      onClick={() =>
+                        isLoggedIn && toast.success("Added to Wishlist")
+                      }
+                    />
                   )}
                 </span>
               </div>
@@ -92,7 +103,6 @@ const Product = ({ products }) => {
                     <p className="offer-info">({product.offer})</p>
                   </div>
                 </div>
-
                 <div className="card-footer">
                   {cart.some(({ product: prd }) => prd._id === product._id) ? (
                     <Link
@@ -104,17 +114,21 @@ const Product = ({ products }) => {
                   ) : (
                     <button
                       className="btn-link call-to-action vertical-btn"
-                      onClick={() =>
-                        cartDispatch({
-                          type: "ADD_TO_CART",
-                          payload: product,
-                        })
-                      }
+                      onClick={() => {
+                        if (isLoggedIn) {
+                          cartDispatch({
+                            type: "ADD_TO_CART",
+                            payload: product,
+                          });
+                          toast.success("Added to cart");
+                        } else toast.error("Please Login to Add to Cart");
+                      }}
                     >
                       Add to cart
                     </button>
                   )}
                 </div>
+                <ToastContainer position="bottom-center" />
               </div>
             </div>
           ))}
