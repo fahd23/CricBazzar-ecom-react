@@ -5,11 +5,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 1.5rem;
   line-height: 2rem;
   font-size: 1.2rem;
   color: var(--primary-color);
   gap: 1rem;
+  padding: 1.5rem 8rem;
 }
 .footer a {
   text-decoration: none;
@@ -17,7 +17,6 @@
 }
 .footer-icon-container {
   display: flex;
-  flex-direction: row;
   gap: 1.5rem;
 }
 .footer-icon {
@@ -30,4 +29,16 @@
 .footer-text {
   font-size: 1rem;
   margin: 1rem 0 0 -4.2rem;
+}
+@media screen and (max-width: 600px) {
+  .footer-titles {
+    margin-left: 0;
+  }
+  .footer-text {
+    font-size: 1rem;
+    margin-left: 0;
+  }
+  .footer {
+    padding: 2rem;
+  }
 }

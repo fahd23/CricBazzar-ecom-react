@@ -7,10 +7,11 @@ import {
   Carts,
   LoginPage,
   SignupPage,
-  ForgetPassPage,
   WishListPage,
   NotFound,
 } from "pages";
+import { RequiresAuth } from "components/router/RequiresAuth";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -19,12 +20,17 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/mock" element={<Mockman />} />
         <Route path="/products" element={<Products />} />
-        <Route path="/carts" element={<Carts />} />
-        <Route path="/wishlist" element={<WishListPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
-        <Route path="/forgotpassword" element={<ForgetPassPage />} />
         <Route path="*" element={<NotFound />} />
+        <Route
+          path="/carts"
+          element={<RequiresAuth>{<Carts />}</RequiresAuth>}
+        />
+        <Route
+          path="/wishlist"
+          element={<RequiresAuth>{<WishListPage />}</RequiresAuth>}
+        />
       </Routes>
     </div>
   );
